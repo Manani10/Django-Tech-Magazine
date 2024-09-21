@@ -10,5 +10,9 @@ This is a Django-based web application designed to serve as a tech magazine, fea
 - **Article Detail Page**: View full article content and add comments.
 - **User Registration & Authentication**: Sign up, log in, and view user profiles.
 - **Comment System**: Users can add comments to articles.
-  
+
+## Technologies Used
+Django (Python)
+SQLite (default)
+HTML/CSS for the front end
 
