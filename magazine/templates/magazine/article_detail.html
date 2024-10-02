@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ article.title }}</h1>
+<p>{{ article.content }}</p>
+<p>Author: {{ article.author }}</p>
+
+<h2>Comments</h2>
+<ul>
+    {% for comment in article.comments.all %}
+        <li>{{ comment.author.username }}: {{ comment.text }}</li>
+    {% empty %}
+        <li>No comments yet.</li>
+    {% endfor %}
+</ul>
+
+<h3>Add a Comment</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Comment</button>
+</form>
+
+<a href="{% url 'home' %}">Back to home</a>
+{% endblock %}
+
